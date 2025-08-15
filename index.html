@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>A2Seek: Towards Reasoning-Centric Benchmark for Aerial Anomaly Understanding</title>
+  <title>RoboThink: Training-Free VLM Planning for Long-Horizon Robotic Manipulation via Spatial-Aware Chain-of-Thought and Self-Correction</title>
   <link rel="icon" type="image/x-icon" href="static/images/narin.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,34 +52,27 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">A2Seek: Towards Reasoning-Centric Benchmark for Aerial Anomaly Understanding</h1>
+            <h1 class="title is-1 publication-title">RoboThink: Training-Free VLM Planning for Long-Horizon Robotic Manipulation via Spatial-Aware Chain-of-Thought and Self-Correction</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://2-mo.github.io/" target="_blank">Mengjingcheng Mo</a><sup>*</sup>,</span>
+                <a href="https://2-mo.github.io/" target="_blank">Shedan Yang</a><sup></sup>,</span>
               <span class="author-block">
-                <a href="https://github.com/Hayneyday" target="_blank">Xinyang Tong</a><sup>*</sup>,</span>
+                <a href="https://github.com/Hayneyday" target="_blank">Jiaxu Leng</a><sup></sup>,</span>
               <span class="author-block">
-                <a href="https://github.com/Hayneyday" target="_blank">Mingpi Tan</a>,</span>
+                <a href="https://github.com/Hayneyday" target="_blank">Mengjingcheng Mo</a>,</span>
               <span class="author-block">
-                <a href="https://github.com/Hayneyday" target="_blank">Jiaxu Leng</a>,</span>
-              <span class="author-block">
-                <a href="https://github.com/Hayneyday" target="_blank">Jiankang Zheng</a>,</span>
-              <span class="author-block">
-                <a href="https://github.com/Hayneyday" target="_blank">Yiran Liu</a>,</span>
-              <span class="author-block">
-                <a href="https://github.com/Hayneyday" target="_blank">Haosheng Chen</a>,</span>
+                <a href="https://github.com/Hayneyday" target="_blank">Yunjin Qu</a>,</span>
               <span class="author-block">
                 <a href="https://github.com/Hayneyday" target="_blank">Ji Gan</a>,</span>
               <span class="author-block">
-                <a href="https://github.com/Hayneyday" target="_blank">Weisheng Li</a>,</span>
+                <a href="https://github.com/Hayneyday" target="_blank">Haosheng Chen</a>,</span>
               <span class="author-block">
                 <a href="https://github.com/Hayneyday" target="_blank">Xinbo Gao</a>,</span>
             </div>
 
                   <div class="is-size-5 publication-authors">
                     <span class="author-block">Chongqing University of Posts and Techcommunications<be>...</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution</small></span>
                   </div>
 
                   <div class="column has-text-centered">
@@ -95,20 +88,9 @@
                       </a>
                     </span>
 
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="https://huggingface.co/datasets/Hayneyday/A2Seek" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/Hayneyday" target="_blank"
+                    <a href="https://github.com/yshedan" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -142,7 +124,7 @@
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
         <!-- Your video here -->
-        <source src="static/videos/A2Seek_Demo.mp4"
+        <source src="static/videos/RoboThink_Demo.mp4"
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
@@ -161,11 +143,9 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            While unmanned aerial vehicles (UAVs) offer wide-area, high-altitude coverage for anomaly detection, they face challenges such as dynamic viewpoints, scale variations, and complex scenes. Existing datasets and methods, mainly designed for fixed ground-level views, struggle to adapt to these conditions, leading to significant performance drops in drone-view scenarios.
-To bridge this gap, we introduce A2Seek (Aerial Anomaly Seek), a large-scale, reasoning-centric benchmark dataset for aerial anomaly understanding. This dataset covers various scenarios and environmental conditions, providing high-resolution real-world aerial videos with detailed annotations, including anomaly categories, frame-level timestamps, region-level bounding boxes, and natural language explanations for causal reasoning. 
-Building on this dataset, we propose A2Seek-R1, a novel reasoning framework that generalizes R1-style strategies to aerial anomaly understanding, enabling a deeper understanding of ``Where'' anomalies occur and ``Why'' they happen in aerial frames.
-To this end, A2Seek-R1 first employs a graph-of-thought (GoT)-guided supervised fine-tuning approach to activate the model's latent reasoning capabilities on A2Seek. Then, we introduce Aerial Group Relative Policy Optimization (A-GRPO) to design rule-based reward functions tailored to aerial scenarios. Furthermore, we propose a novel ``seeking'' mechanism that simulates UAV flight behavior by directing the model's attention to informative regions.
-Extensive experiments demonstrate that A2Seek-R1 achieves up to a 22.04\% improvement in AP for prediction accuracy and a 13.9\% gain in mIoU for anomaly localization, exhibiting strong generalization across complex environments and out-of-distribution scenarios.
+            Robotic manipulation has achieved promising results in simple tasks, yet it remains challenged by long-horizon and complex task settings. Recent efforts have introduced large language models (LLMs) to decompose tasks, partially mitigating these difficulties. However, two key limitations persist: (1) in complex environments, object diversity, occlusions, and environmental disturbances hinder reliable perception and planning; and (2) sequential execution of multi-step tasks is vulnerable to cascading failures from intermediate errors, compromising overall task completion. To address these challenges, we draw inspiration from human cognition, enabling robots to understand inter-object relationships for obstacle-aware planning and dynamically recover from execution failures to enhance robustness.
+Motivated by these insights, we propose \textbf{RoboThink}, a vision-language model (VLM)-driven framework for spatial reasoning and error correction in robotic manipulation. RoboThink incorporates spatial information into task planning and continuously reflects on and rectifies execution errors. Specifically, we introduce a spatial-aware chain-of-thought module to guide VLMs in multimodal spatial reasoning, facilitating obstacle-aware planning and trajectory generation. Furthermore, a subtask correction mechanism is devised to exploit model feedback and validation for adaptive error rectification during task execution.
+Extensive real-world experiments across six manipulation tasks demonstrate that RoboThink achieves an average success rate of 73.33\%, outperforming the baseline by 36.66\%. On three long-horizon complex tasks of organize the items, wipe the table and clean the table, RoboThink attains a 73.33\% success rate, marking a 46.66\% relative improvement. 
           </p>
         </div>
       </div>
@@ -176,12 +156,12 @@ Extensive experiments demonstrate that A2Seek-R1 achieves up to a 22.04\% improv
 
 
   
-<!-- Section 1: Overview of the A2Seek Benchmark -->
+<!-- Section 1: Overview of the RoboThink -->
 <section class="section">
   <div class="container is-max-widescreen">
     <div class="columns is-centered">
       <div class="column is-10">
-        <h2 class="title is-3 has-text-centered">Overview of the A2Seek Benchmark</h2>
+        <h2 class="title is-3 has-text-centered">Overview of the RoboThink</h2>
         <div class="content has-text-justified">
           <p><strong>(a)</strong> Challenges in aerial anomaly detection: Traditional methods rely on static surveillance views and focus mainly on classification, making it difficult to answer “Where” and “Why” anomalies occur under dynamic UAV perspectives.</p>
           <p><strong>(b)</strong> Dataset statistics on multiple dimensions.</p>
