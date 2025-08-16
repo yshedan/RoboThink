@@ -162,7 +162,6 @@ Extensive real-world experiments across six manipulation tasks demonstrate that 
       <div class="column is-10">
         <h2 class="title is-3 has-text-centered">Overview of the RoboThink</h2>
         <div class="content has-text-justified">
-          <p>Left: fixed-view surveillance datasets. Right: diverse aerial views in A2Seek.</p>
         </div>
         <div class="columns is-centered mt-4 mb-4">
           <div class="column is-10">
@@ -189,20 +188,22 @@ Extensive real-world experiments across six manipulation tasks demonstrate that 
 
 
   
-<!-- Section 2: Representative Anomaly Types -->
+<!-- Section 2: Trajectory planning results visualization -->
 <section class="section">
   <div class="container is-max-widescreen">
     <div class="columns is-centered">
       <div class="column is-10">
-        <h2 class="title is-3 has-text-centered">Representative Anomaly Types</h2>
+        <h2 class="title is-3 has-text-centered">Trajectory planning results visualization</h2>
         <div class="content has-text-justified">
-          <p>Our dataset covers a broad spectrum of anomalous behaviors across different risk levels, highlighting the diversity and complexity of aerial anomaly detection.</p>
+          <p>Three examples of trajectory planning results of the RoboThink in the real-world environment.</p>
         </div>
         <div class="columns is-centered mt-4 mb-4">
           <div class="column is-10">
             <figure class="image">
-              <img src="static/images/carousel4.png" alt="Representative anomaly types in the A2Seek dataset">
-              <figcaption class="has-text-centered">Different Risk Level of Anomalies</figcaption>
+              <img src="static/images/carouse3.png" alt="Trajectory planning results visualization">
+              <figcaption class="has-text-centered">Trajectory planning results visualization. Where, columns (a) display the observation images, columns (b) show the front-view
+trajectory diagrams, and columns (c) illustrate the left-view trajectory diagrams, column (d) displays the observation image after completing the trajectory
+(b). </figcaption>
             </figure>
           </div>
         </div>
@@ -211,23 +212,23 @@ Extensive real-world experiments across six manipulation tasks demonstrate that 
   </div>
 </section>
 
-<!-- Section 5: Four-Stage Annotation Workflow -->
+  
+<!-- Section 3: subtask correction process visualization -->
 <section class="section">
   <div class="container is-max-widescreen">
     <div class="columns is-centered">
       <div class="column is-10">
-        <h2 class="title is-3 has-text-centered">Four-Stage Annotation Workflow</h2>
+        <h2 class="title is-3 has-text-centered"> Subtask correction process visualization</h2>
         <div class="content has-text-justified">
-          <p><em>Step 1</em> (blue): Temporal annotators mark the start/end frames and class of every anomalous episode, exporting a JSON timeline.</p>
-          <p><em>Step 2</em> (salmon): For the first frame of each event, experts draw a bounding box around the anomalous region and supply a natural-language description.</p>
-          <p><em>Step 3</em> (green): A pretrained tracker propagates each seed through the clip; an automated checker screens and funnels approved tracks into the spatial-label repository.</p>
-          <p><em>Step 4</em> (violet): Vision-language models ingest temporal tags, spatial tracks, and human captions; via chain-of-thought reasoning, they merge these cues into consolidated frame-level annotations.</p>
+          <p> Three cases of subtask correction process in the real-wrold environment.</p>
         </div>
         <div class="columns is-centered mt-4 mb-4">
           <div class="column is-10">
             <figure class="image">
-              <img src="static/images/carousel5.png" alt="Four–stage annotation workflow">
-              <figcaption class="has-text-centered">4-Step Label Process</figcaption>
+              <img src="static/images/carouse4.png" alt="Subtask correction process visualization">
+              <figcaption class="has-text-centered">Three cases of subtask correction process in the real-wrold environment. The first, second, and third rows in the figure correspond to the correction
+processes of the three subtasks, where “(b) Trajectory0” denotes the initially planned trajectory, and “(e) Trajectory1” denotes the corrected trajectory, “(c) Obser-
+vation0” and “(f) Observation0” correspond to the observation images obtained after executing “(b) Trajectory0” and “(e) Trajectory1”, respectively.</figcaption>
             </figure>
           </div>
         </div>
@@ -237,7 +238,28 @@ Extensive real-world experiments across six manipulation tasks demonstrate that 
 </section>
 
 
-
+<!-- Section 4: Execution processes visualization -->
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <h2 class="title is-3 has-text-centered"> Execution processes visualizatio</h2>
+        <div class="content has-text-justified">
+          <p> Execution processes of three tasks in the real-world environment.</p>
+        </div>
+        <div class="columns is-centered mt-4 mb-4">
+          <div class="column is-10">
+            <figure class="image">
+              <img src="static/images/carouse4.png" alt="Subtask correction process visualization">
+              <figcaption class="has-text-centered">Execution processes of three tasks in the real-world environment. Where, red circles in the figure indicate the locations of subtask failures,
+whereas green circles highlight successful corrections following failures.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
@@ -247,12 +269,7 @@ Extensive real-world experiments across six manipulation tasks demonstrate that 
       <h2 class="title">If you find our work useful, please give us a free cite:</h2>
       <pre><code>
         
-@article{mo2025a2seek,
-  title={A2Seek: Towards Reasoning-Centric Benchmark for Aerial Anomaly Understanding},
-  author={Mo, Mengjingcheng and Tong, Xinyang and Leng, Jiaxu and Tan, Mingpi and Zheng, Jiankang and Liu, Yiran and Chen, Haosheng and Gan, Ji and Li, Weisheng and Gao, Xinbo},
-  journal={arXiv preprint arXiv:2505.21962},
-  year={2025}
-}
+soon
       </code></pre>
     </div>
 </section>
